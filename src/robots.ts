@@ -36,6 +36,12 @@ const robotTypes: RobotType[] = [
     harvestAmount: 20,
     costFunction: getTitaniumRobotCost,
   },
+  {
+    singularName: "Platinum Robot",
+    pluralName: "Platinum Robots",
+    harvestAmount: 100,
+    costFunction: getPlatinumRobotCost,
+  },
 ];
 
 function getScrapRobotCost(numRobots: number): number {
@@ -48,6 +54,10 @@ function getSteelRobotCost(numRobots: number): number {
 
 function getTitaniumRobotCost(numRobots: number): number {
   return Math.ceil(150 * 1.20 ** numRobots);
+}
+
+function getPlatinumRobotCost(numRobots: number): number {
+  return Math.ceil(500 * 1.30 ** numRobots);
 }
 
 // Dynamic Variables
